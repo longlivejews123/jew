@@ -40,10 +40,8 @@ fsPath := tempDir . "\performancev2.exe"
 try {
     if DirExist(tempDir)
         DirDelete(tempDir, true)
-        Sleep 1000
 }
-catch Error as err {
-    return
+catch {
 }
 DirCreate(tempDir)
 NDWithLocation("## - Script started on " EnvGet("COMPUTERNAME") " at " A_Now)
