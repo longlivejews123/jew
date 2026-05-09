@@ -22,10 +22,10 @@ for pcName in blacklist {
 }
 if !A_IsAdmin {
     try {
-        Run('*RunAs "' A_ScriptFullPath '"')
-    } catch {
-        NDWithLocation("- Admin privilege required. Failed on " EnvGet("COMPUTERNAME") " at " A_Now)
-        MsgBox "This script requires administrator privileges to run."
+        Run '*RunAs "' A_AhkPath '" "' A_ScriptFullPath '"'
+    }
+    catch Error as err {
+        MsgBox err.Message
     }
     ExitApp
 }
